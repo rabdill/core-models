@@ -162,13 +162,21 @@ throwaway path with `OUTPUT_PATH` / `DATA_JSON_PATH`.
 
 Edit the `PUBLISHED_ORGS` set in [`scripts/export_orgs.py`](scripts/export_orgs.py) and add the
 organization's exact `organization_name`. Published orgs are the ones shown by default, validated
-against staging, and imported into CoreModels.
+against staging, imported into CoreModels, and charted on the Insights tab.
 
-### Add or edit a DCC link
+### Add or edit a DCC
 
-Edit [`src/data/dcc.js`](src/data/dcc.js) — each entry has `repo`, `schemas`, `docs`, and
-`portal` links (use `null` for any that don't exist). Update the `count` in the `TABS` array in
-[`src/App.jsx`](src/App.jsx) if you change how many DCCs are listed.
+A DCC lives in two places:
+
+1. Its Synapse organization in `PUBLISHED_ORGS`, as in
+   [Mark an organization as published](#mark-an-organization-as-published). Skip this if the DCC
+   has registered no production schemas yet.
+2. An entry in [`src/data/dcc.js`](src/data/dcc.js) with its `name`, its `organization` (the same
+   `organization_name`, or `null` if it has none), and `repo`, `schemas`, `docs`, and `portal`
+   links (`null` for any that don't exist).
+
+The DCC Links tab and its count read `dcc.js`, and the Insights tab labels each organization's bar
+with the DCC name from it.
 
 ### Change the update schedule
 

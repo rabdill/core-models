@@ -36,7 +36,7 @@ The live site has three tabs:
 | Tab | What it shows |
 | --- | --- |
 | **Registered Schemas** | Every JSON schema registered in the Synapse schema registry — one row per schema, at its latest version. Search, filter by organization / schema / version / status, sort, pin favorites, view the raw JSON, and export to CSV or Excel. |
-| **DCC Links** | A hand-curated table of Data Coordinating Centers (ARK, ADKP, ALS, Classic, ELITE, HTAN2, MC2, NAMHub, NF) linking straight to each one's GitHub data model, JSON schemas, documentation site, and Synapse portal. |
+| **DCC Links** | A hand-curated table of Data Coordinating Centers ([`src/data/dcc.js`](src/data/dcc.js)) linking straight to each one's GitHub data model, JSON schemas, documentation site, and Synapse portal. |
 | **Insights** | Summary statistics across all registered schemas — counts by organization, status, and activity over time. |
 
 You can also **Open in CoreModels** (top-right) to explore the published schemas in the
@@ -165,8 +165,7 @@ Every schema row carries two independent signals:
 
 **Status — `published` vs `draft`**
 Set during export based on the schema's organization. A curated allow-list of production
-organizations (e.g. `MC2Center`, `org.synapse.nf`, `HTAN2Organization`, `sage.schemas.ad`,
-`sage.schemas.elite`, `NAMhub`, `org.synapse.classic`) is marked **published**; everything else
+organizations is marked **published**; everything else
 is **draft**. Only **published** schemas are pushed to CoreModels and validated against staging.
 The live site hides drafts by default. *(To change which organizations count as published, edit
 `PUBLISHED_ORGS` in `scripts/export_orgs.py` — see [CONTRIBUTING.md](CONTRIBUTING.md).)*
@@ -293,7 +292,7 @@ Each row in `public/data.json` describes one schema at its latest version:
 
 ## Maintenance & contributing
 
-Editing the pipeline, changing which organizations are "published", adding a DCC link, adjusting
+Editing the pipeline, changing which organizations are "published", adding a DCC, adjusting
 the schedule, or rotating credentials? See **[CONTRIBUTING.md](CONTRIBUTING.md)** for a full
 walkthrough of the scripts, workflows, and required GitHub secrets.
 

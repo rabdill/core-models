@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react'
 import SchemaTable from './components/SchemaTable.jsx'
 import DCCTable from './components/DCCTable.jsx'
 import StatsPage from './components/StatsPage.jsx'
+import { DCC_DATA } from './data/dcc.js'
 import sageLogo from './assets/sage-logo.svg'
 
 const TABS = [
   { id: 'schemas', label: 'Registered Schemas' },
-  { id: 'dcc',     label: 'DCC Links', count: 9 },
+  { id: 'dcc',     label: 'DCC Links', count: DCC_DATA.length },
   { id: 'stats',   label: 'Insights' },
 ]
 

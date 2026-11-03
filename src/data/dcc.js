@@ -1,6 +1,7 @@
 export const DCC_DATA = [
   {
     name: 'ARK',
+    organization: null,
     repo: { label: 'ARK-Portal/data_model', url: 'https://github.com/ARK-Portal/data_model' },
     schemas: { label: 'model_json_schema', url: 'https://github.com/ARK-Portal/data_model/tree/main/model_json_schema' },
     docs: { label: 'ark-portal.github.io/data_model', url: 'https://ark-portal.github.io/data_model/' },
@@ -8,6 +9,7 @@ export const DCC_DATA = [
   },
   {
     name: 'ADKP',
+    organization: 'sage.schemas.ad',
     repo: { label: 'adknowledgeportal/data-models', url: 'https://github.com/adknowledgeportal/data-models' },
     schemas: { label: 'current-manifest-schemas/AD.model', url: 'https://github.com/adknowledgeportal/data-models/tree/main/current-manifest-schemas/AD.model' },
     docs: { label: 'amp-ad-metadata-dictionary', url: 'https://sagebio.shinyapps.io/amp-ad-metadata-dictionary/' },
@@ -15,6 +17,7 @@ export const DCC_DATA = [
   },
   {
     name: 'ALS',
+    organization: 'ampals.schemas',
     repo: { label: 'amp-als/data-model', url: 'https://github.com/amp-als/data-model' },
     schemas: { label: 'json-schemas', url: 'https://github.com/amp-als/data-model/tree/main/json-schemas' },
     docs: null,
@@ -22,6 +25,7 @@ export const DCC_DATA = [
   },
   {
     name: 'Classic',
+    organization: 'org.synapse.classic',
     repo: { label: 'Sage-Bionetworks/CLASSIC', url: 'https://github.com/Sage-Bionetworks/CLASSIC' },
     schemas: { label: 'model', url: 'https://github.com/Sage-Bionetworks/CLASSIC/tree/main/model' },
     docs: null,
@@ -29,6 +33,7 @@ export const DCC_DATA = [
   },
   {
     name: 'ELITE',
+    organization: 'sage.schemas.elite',
     repo: { label: 'eliteportal/data-models', url: 'https://github.com/eliteportal/data-models' },
     schemas: null,
     docs: { label: 'eliteportal.github.io/data-dictionary', url: 'https://eliteportal.github.io/data-dictionary/' },
@@ -36,6 +41,7 @@ export const DCC_DATA = [
   },
   {
     name: 'HTAN2',
+    organization: 'HTAN2Organization',
     repo: { label: 'ncihtan/htan2-data-model', url: 'https://github.com/ncihtan/htan2-data-model' },
     schemas: { label: 'JSON_Schemas', url: 'https://github.com/ncihtan/htan2-data-model/tree/main/JSON_Schemas' },
     docs: { label: 'docs.humantumoratlas.org', url: 'https://docs.humantumoratlas.org/data_model/overview/' },
@@ -43,6 +49,7 @@ export const DCC_DATA = [
   },
   {
     name: 'MC2',
+    organization: 'MC2Center',
     repo: { label: 'mc2-center/data-models', url: 'https://github.com/mc2-center/data-models' },
     schemas: { label: 'json_schemas', url: 'https://github.com/mc2-center/data-models/tree/main/mc2.model' },
     docs: { label: 'mc2-center.github.io/data-models', url: 'https://mc2-center.github.io/data-models/' },
@@ -50,6 +57,7 @@ export const DCC_DATA = [
   },
   {
     name: 'NAMHub',
+    organization: 'NAMhub',
     repo: { label: 'sagebio-ada/nam-hub-models', url: 'https://github.com/sagebio-ada/nam-hub-models' },
     schemas: { label: 'releases', url: 'https://github.com/sagebio-ada/nam-hub-models/releases' },
     docs: null,
@@ -57,6 +65,7 @@ export const DCC_DATA = [
   },
   {
     name: 'NF',
+    organization: 'org.synapse.nf',
     repo: { label: 'nf-osi/nf-metadata-dictionary', url: 'https://github.com/nf-osi/nf-metadata-dictionary' },
     schemas: { label: 'registered-json-schemas', url: 'https://github.com/nf-osi/nf-metadata-dictionary/tree/main/registered-json-schemas' },
     docs: { label: 'nf-osi.github.io/nf-metadata-dictionary', url: 'https://nf-osi.github.io/nf-metadata-dictionary/' },

@@ -1,13 +1,10 @@
 import { useMemo } from 'react'
+import { DCC_DATA } from '../data/dcc.js'
 
-const PUBLISHED_ORGS = [
-  { id: 'MC2Center',          label: 'MC2' },
-  { id: 'org.synapse.nf',     label: 'NF' },
-  { id: 'HTAN2Organization',  label: 'HTAN2' },
-  { id: 'sage.schemas.ad',    label: 'ADKP' },
-  { id: 'sage.schemas.elite', label: 'ELITE' },
-  { id: 'NAMhub',             label: 'NAMHub' },
-]
+// Bar labels: an organization's DCC name, or the organization name if no DCC claims it
+const DCC_NAMES = Object.fromEntries(
+  DCC_DATA.filter(d => d.organization).map(d => [d.organization, d.name])
+)
 
 // One accent colour per bar — cycles through a curated palette
 const BAR_COLORS = [
@@ -17,16 +14,20 @@ const BAR_COLORS = [
   '#f59e0b', // amber
   '#ec4899', // pink
   '#8b5cf6', // violet
+  '#f97316', // orange
 ]
 
 export default function StatsPage({ data, loadState }) {
   const counts = useMemo(() => {
     const map = {}
     for (const row of data) {
+      if (row.status !== 'published') continue
       if (map[row.organization_name] === undefined) map[row.organization_name] = 0
       map[row.organization_name]++
     }
-    return PUBLISHED_ORGS.map(org => ({ ...org, count: map[org.id] ?? 0 }))
+    return Object.entries(map)
+      .map(([id, count]) => ({ id, label: DCC_NAMES[id] ?? id, count }))
+      .sort((a, b) => a.label.localeCompare(b.label))
   }, [data])
 
   const maxCount = Math.max(...counts.map(o => o.count), 1)
